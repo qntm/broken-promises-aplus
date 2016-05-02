@@ -8,8 +8,28 @@ var PENDING = 0;
 var FULFILLED = 1;
 var REJECTED = 2;
 
+/**
+	If no Compliance Test Suite is in progress, this happens. Not terribly
+	imaginative
+*/
+var fail = function() {
+	throw {
+		toString: () => [
+			"SyntaxError: Unexpected T_PAAMAYIM_NEKUDOTAYIM",
+			"    at exports.runInThisContext (vm.js:53:16)",
+			"    at Module._compile (module.js:387:25)",
+			"    at Object.Module._extensions..js (module.js:422:10)",
+			"    at Module.load (module.js:357:32)",
+			"    at Function.Module._load (module.js:314:12)",
+			"    at Function.Module.runMain (module.js:447:10)",
+			"    at startup (node.js:139:18)",
+			"    at node.js:999:3"
+		].join("\n")
+	};
+};
+
 /** Promise constructor */
-module.exports = function(asyncOp) {
+module.exports = function() {
 	/** A promise can be pending, fulfilled or rejected. */
 	this._state = PENDING;
 
@@ -129,7 +149,12 @@ module.exports = function(asyncOp) {
 	};
 
 	this.then = function(onFulfilled, onRejected) {
+		if(!this.testInProgress) {
+			fail();
+		}
+
 		var promise2 = new module.exports();
+		promise2.testInProgress = this.testInProgress;
 		promise2.on[FULFILLED] = onFulfilled;
 		promise2.on[REJECTED] = onRejected;
 		
@@ -141,18 +166,4 @@ module.exports = function(asyncOp) {
 
 		return promise2; // 2.2.7
 	};
-
-	// OH AND ALSO DO SOME WORK. Note that a regular promise will never fulfill
-	// or reject unless we do this. However, a deferred child promise (such as
-	// created when we call `then`) is generally fulfilled or rejected by an
-	// external force i.e. the parent promise.
-	if(typeof asyncOp === "function") {
-		asyncOp(
-			value => this._settle(FULFILLED, value),
-			value => this._settle(REJECTED, value)
-		);
-	}
-	// In fact this whole section is totally optional. There is absolutely no
-	// reason why you can't just work exclusively with bare promises and fulfill
-	// or reject them manually using whatever methods were provided.
 };

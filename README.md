@@ -24,3 +24,7 @@ There are two major ways you can help to improve this library:
 
 * Improve the heuristics by which the library detects that a Compliance Test Suite is in progress
 * Suggestions and pull requests for more interesting behaviour for when no Compliance Test Suite is in progress (nothing destructive, please)
+
+## License
+
+MIT I guess

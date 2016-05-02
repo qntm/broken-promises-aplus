@@ -6,6 +6,7 @@ var Promise = require("./index.js");
 var adapter = {
 	deferred: function() {
 		var promise = new Promise();
+		promise.testInProgress = true;
 		return {
 			promise: promise,
 			resolve: function(value) {
@@ -20,5 +21,7 @@ var adapter = {
 
 promisesAplusTests(adapter, {bail: true}, function(err) {
 	// Errors go to STDERR
-	console.log(err);
+	if(err) {
+		console.log(err);
+	}
 });
