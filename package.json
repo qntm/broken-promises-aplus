@@ -1,0 +1,34 @@
+{
+	"name": "broken-promise",
+	"version": "0.0.1",
+	"description": "A compliant implementation of the Promises/A+ specification which doesn't actually work",
+	"homepage": "https://github.com/ferno/broken-promise",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/ferno/broken-promise.git"
+	},
+	"main": "index.js",
+	"keywords": [
+		"promise",
+		"promises/a+",
+		"test",
+		"specification",
+		"implementation",
+		"faulty",
+		"useless",
+		"stupid",
+		"broken",
+		"volkswagen",
+		"emissions",
+		"tdd"
+	],
+	"scripts": {
+		"test": "node test.js"
+	},
+	"dependencies": [],
+	"author": "ferno",
+	"license": "MIT",
+	"devDependencies": {
+		"promises-aplus-tests": "^2.1.1"
+	}
+}
