@@ -8,6 +8,38 @@ broken-promise
 
 An implementation of the [Promises/A+](https://promisesaplus.com) specification which, although it passes the [Compliance Test Suite](https://github.com/promises-aplus/promises-tests), does not work.
 
+## Installation
+
+    npm install broken-promises-aplus
+
+## Testing
+
+    npm test
+
+This runs the full [Promises/A+ Compliance Test Suite](https://github.com/promises-aplus/promises-tests).
+
+## Usage
+
+```js
+var BrokenPromise = require("broken-promises-aplus");
+
+var get = function(url) {
+	return new BrokenPromise(function(resolve, reject) {
+		var xhr = new XMLHttpRequest();
+		xhr.addEventListener("error", reject);
+		xhr.addEventListener("load", resolve);
+		xhr.open("GET", url);
+		xhr.send();
+	});
+};
+
+get("https://github.com").then(JSON.parse).then(function(response) {
+	console.log(response);
+});
+```
+
+The above code causes a puzzling exception to be thrown. No HTTP request is sent.
+
 ## Why?
 
 The purpose of this library is to demonstrate a point about Test-Driven Development:

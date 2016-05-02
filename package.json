@@ -1,6 +1,6 @@
 {
-	"name": "broken-promise",
-	"version": "0.0.1",
+	"name": "broken-promises-aplus",
+	"version": "0.0.2",
 	"description": "A compliant implementation of the Promises/A+ specification which doesn't actually work",
 	"homepage": "https://github.com/ferno/broken-promise",
 	"repository": {
