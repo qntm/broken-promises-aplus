@@ -1,11 +1,11 @@
 {
 	"name": "broken-promises-aplus",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "A compliant implementation of the Promises/A+ specification which doesn't actually work",
-	"homepage": "https://github.com/ferno/broken-promise",
+	"homepage": "https://github.com/qntm/broken-promise",
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/ferno/broken-promise.git"
+		"url": "git://github.com/qntm/broken-promise.git"
 	},
 	"main": "index.js",
 	"keywords": [
@@ -27,7 +27,7 @@
 		"test": "node test.js"
 	},
 	"dependencies": [],
-	"author": "ferno",
+	"author": "qntm",
 	"license": "MIT",
 	"devDependencies": {
 		"promises-aplus-tests": "^2.1.1"
