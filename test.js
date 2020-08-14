@@ -22,6 +22,6 @@ var adapter = {
 promisesAplusTests(adapter, {bail: true}, function(err) {
 	// Errors go to STDERR
 	if(err) {
-		console.log(err);
+		throw err;
 	}
 });
