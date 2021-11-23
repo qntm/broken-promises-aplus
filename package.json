@@ -2,10 +2,10 @@
   "name": "broken-promises-aplus",
   "version": "1.0.0",
   "description": "A compliant implementation of the Promises/A+ specification which doesn't actually work",
-  "homepage": "https://github.com/qntm/broken-promise",
+  "homepage": "https://github.com/qntm/broken-promises-aplus",
   "repository": {
     "type": "git",
-    "url": "git://github.com/qntm/broken-promise.git"
+    "url": "git://github.com/qntm/broken-promises-aplus.git"
   },
   "type": "module",
   "main": "src/index.js",

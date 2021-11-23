@@ -3,8 +3,7 @@
          title="Promises/A+ 1.0 compliant" align="right" />
 </a>
 
-broken-promise 
-==============
+# broken-promises-aplus
 
 An implementation of the [Promises/A+](https://promisesaplus.com) specification which, although it passes the [Compliance Test Suite](https://github.com/promises-aplus/promises-tests), does not work.
 
