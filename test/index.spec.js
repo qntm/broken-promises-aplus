@@ -22,8 +22,8 @@ const adapter = {
   }
 }
 
-describe('broken-promise', () => {
-  it('passes Promises/A+', done => {
+describe('broken-promises-aplus', () => {
+  it('passes Promises/A+', function (done) {
     this.timeout(0)
 
     promisesAplusTests(adapter, { bail: true }, err => {
