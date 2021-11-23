@@ -3,39 +3,40 @@
          title="Promises/A+ 1.0 compliant" align="right" />
 </a>
 
-broken-promise 
-==============
+# broken-promises-aplus
 
 An implementation of the [Promises/A+](https://promisesaplus.com) specification which, although it passes the [Compliance Test Suite](https://github.com/promises-aplus/promises-tests), does not work.
 
 ## Installation
 
-    npm install broken-promises-aplus
+```sh
+npm install broken-promises-aplus
+```
 
 ## Testing
 
-    npm test
+```sh
+npm test
+```
 
 This runs the full [Promises/A+ Compliance Test Suite](https://github.com/promises-aplus/promises-tests).
 
 ## Usage
 
 ```js
-var BrokenPromise = require("broken-promises-aplus");
+import Promise from 'broken-promises-aplus'
 
-var get = function(url) {
-	return new BrokenPromise(function(resolve, reject) {
-		var xhr = new XMLHttpRequest();
-		xhr.addEventListener("error", reject);
-		xhr.addEventListener("load", resolve);
-		xhr.open("GET", url);
-		xhr.send();
-	});
-};
+const get = url => new Promise((resolve, reject) => {
+  var xhr = new XMLHttpRequest()
+  xhr.addEventListener("error", reject)
+  xhr.addEventListener("load", resolve)
+  xhr.open("GET", url)
+  xhr.send()
+})
 
-get("https://github.com").then(JSON.parse).then(function(response) {
-	console.log(response);
-});
+get("https://github.com")
+  .then(JSON.parse)
+  .then(console.log)
 ```
 
 The above code causes a puzzling exception to be thrown. No HTTP request is sent.
@@ -48,15 +49,11 @@ The purpose of this library is to demonstrate a point about Test-Driven Developm
 
 A prominent recent example of this *not* happening when it *should* have happened is the [Volkswagen emissions scandal](https://en.wikipedia.org/wiki/Volkswagen_emissions_scandal). Here, the developers of the VW engine control unit programmed it to display unusual low-emissions behaviour when it (the ECU) detected that an emissions test was in progress, and to display much improved performance (at the cost of emissions) the rest of the time.
 
-In the same way, `broken-promise` is programmed to behave like a conforming Promises/A+ implementation when it detects that the Compliance Test Suite is in progress, and to display other behaviour at all other times.
+In the same way, `broken-promises-aplus` is programmed to behave like a conforming Promises/A+ implementation when it detects that the Compliance Test Suite is in progress, and to display other behaviour at all other times.
 
 ## How can I help?
 
 There are two major ways you can help to improve this library:
 
 * Improve the heuristics by which the library detects that a Compliance Test Suite is in progress
-* Suggestions and pull requests for more interesting behaviour for when no Compliance Test Suite is in progress (nothing destructive, please)
-
-## License
-
-MIT I guess
+* Make suggestions and pull requests for more interesting behaviour for when no Compliance Test Suite is in progress (nothing destructive, please)
