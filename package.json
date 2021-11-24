@@ -1,6 +1,6 @@
 {
   "name": "broken-promises-aplus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A compliant implementation of the Promises/A+ specification which doesn't actually work",
   "homepage": "https://github.com/qntm/broken-promises-aplus",
   "repository": {
