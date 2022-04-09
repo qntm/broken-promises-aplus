@@ -30,7 +30,7 @@
     "mocha": "c8 --100 mocha",
     "test": "npm run standard && npm run mocha"
   },
-  "dependencies": [],
+  "dependencies": {},
   "author": "qntm",
   "license": "MIT",
   "devDependencies": {
