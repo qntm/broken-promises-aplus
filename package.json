@@ -34,7 +34,7 @@
   "author": "qntm",
   "license": "MIT",
   "devDependencies": {
-    "c8": "^7.10.0",
+    "c8": "^8.0.0",
     "mocha": "^10.0.0",
     "promises-aplus-tests": "^2.1.2",
     "standard": "^17.0.0"
