@@ -1,6 +1,5 @@
-/* eslint-env mocha */
-
 import assert from 'node:assert/strict'
+import { describe, it } from 'node:test'
 
 import promisesAplusTests from 'promises-aplus-tests'
 
@@ -24,9 +23,7 @@ const adapter = {
 }
 
 describe('broken-promises-aplus', () => {
-  it('passes Promises/A+', function (done) {
-    this.timeout(0)
-
+  it('passes Promises/A+', (t, done) => {
     promisesAplusTests(adapter, { bail: true }, err => {
       if (err) {
         done(err)
