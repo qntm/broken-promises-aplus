@@ -1,6 +1,7 @@
 /* eslint-env mocha */
 
-import assert from 'assert'
+import assert from 'node:assert/strict'
+
 import promisesAplusTests from 'promises-aplus-tests'
 
 import Promise from '../src/index.js'
