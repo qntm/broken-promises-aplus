@@ -27,14 +27,13 @@
   "scripts": {
     "postpublish": "npm version patch && git push",
     "standard": "standard",
-    "unit": "c8 --100 node --test",
+    "unit": "node --test --experimental-test-coverage",
     "test": "npm run standard && npm run unit"
   },
   "dependencies": {},
   "author": "qntm",
   "license": "MIT",
   "devDependencies": {
-    "c8": "^10.1.2",
     "promises-aplus-tests": "^2.1.2",
     "standard": "^17.0.0"
   },
