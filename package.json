@@ -27,7 +27,7 @@
   "scripts": {
     "postpublish": "npm version patch && git push",
     "standard": "standard",
-    "unit": "node --test --experimental-test-coverage",
+    "unit": "node --test --experimental-test-coverage --test-coverage-functions=100",
     "test": "npm run standard && npm run unit"
   },
   "dependencies": {},
